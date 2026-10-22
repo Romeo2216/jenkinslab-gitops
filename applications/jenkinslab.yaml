@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkinslab
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/romeo2216/jenkinslab-gitops.git
+    targetRevision: main
+    path: environments/dev
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jenkinslab
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=false
