@@ -1,5 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
+
 metadata:
   name: jenkinslab
   namespace: argocd
@@ -17,5 +18,7 @@ spec:
     namespace: jenkinslab
 
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=false
+    automated:
+      enabled: true
+      prune: false
+      selfHeal: true
