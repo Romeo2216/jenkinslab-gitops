@@ -7,4 +7,4 @@ resources:
 
 images:
   - name: romeo2296/jenkinslab
-    newTag: "1ade7a692a12"
+    newTag: "6ac734843731"
